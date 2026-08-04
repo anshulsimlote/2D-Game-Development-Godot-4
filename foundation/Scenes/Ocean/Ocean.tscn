@@ -13,10 +13,10 @@ texture = ExtResource("1_npita")
 centered = false
 
 [node name="Plane" type="Sprite2D" parent="." unique_id=1289696742]
-position = Vector2(164, 278)
+position = Vector2(150, 106)
 texture = ExtResource("2_i4j2t")
 
 [node name="Helicopter" type="Sprite2D" parent="." unique_id=533979759]
-position = Vector2(464, 59)
+position = Vector2(531, 281)
 rotation = 1.5707964
 texture = ExtResource("3_2ucyk")
