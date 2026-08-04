@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var plane: Sprite2D = $Carrier/Plane
+@onready var plane: Sprite2D = %Plane
 @onready var heli: Sprite2D = $Helicopter
 @onready var eating_sound: AudioStreamPlayer = $EatingSound
 

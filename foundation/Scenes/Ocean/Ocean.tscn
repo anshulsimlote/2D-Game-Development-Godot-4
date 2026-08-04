@@ -27,5 +27,6 @@ position = Vector2(788, 306)
 texture = ExtResource("6_t11xa")
 
 [node name="Plane" type="Sprite2D" parent="Carrier" unique_id=1289696742]
+unique_name_in_owner = true
 position = Vector2(-638, -200)
 texture = ExtResource("2_i4j2t")
