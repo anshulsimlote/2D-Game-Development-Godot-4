@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pox3y7keai67" path="res://Assets/Water.png" id="1_npita"]
 [ext_resource type="Texture2D" uid="uid://c437u01ryh5td" path="res://Assets/Plane.png" id="2_i4j2t"]
+[ext_resource type="Texture2D" uid="uid://b7il5lwsydgpe" path="res://Assets/Helicopter.png" id="3_2ucyk"]
 
 [node name="Ocean" type="Node2D" unique_id=2002604944]
 
@@ -12,3 +13,7 @@ centered = false
 [node name="Plane" type="Sprite2D" parent="." unique_id=1289696742]
 position = Vector2(164, 278)
 texture = ExtResource("2_i4j2t")
+
+[node name="Helicopter" type="Sprite2D" parent="." unique_id=533979759]
+position = Vector2(526, 286)
+texture = ExtResource("3_2ucyk")
