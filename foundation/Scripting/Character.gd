@@ -1,4 +1,4 @@
-class_name Character extends Object
+class_name Character
 
 var health: int = 100:
 	set(value):
