@@ -1,4 +1,4 @@
-class_name Character
+class_name Character extends Object
 
 var health: int = 100:
 	set(value):
@@ -21,6 +21,10 @@ func _init(start_name: String = "PLACEHOLDER NAME", start_health: int = 100):
 func _ready():
 	# This runs later, when the node enters the active scene tree
 	print(name, " is now ready in the scene!")
+	
+func _notification(what)-> void:
+	if what == NOTIFICATION_PREDELETE:
+		print(" DIE!!! ")
 
 func display_info() -> void:
 	print(" Name: ", name," Health: ",health)
