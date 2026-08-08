@@ -19,5 +19,5 @@ position = Vector2(201, 450)
 [node name="Hobbit3" parent="." unique_id=1300447356 instance=ExtResource("2_j0p05")]
 position = Vector2(308, 450)
 
-[node name="Wizard" parent="Hobbit3" unique_id=1147558218 instance=ExtResource("3_5nsto")]
-position = Vector2(545, 4)
+[node name="Wizard" parent="." unique_id=1147558218 instance=ExtResource("3_5nsto")]
+position = Vector2(853, 454)

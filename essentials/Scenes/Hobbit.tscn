@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boqwxh2g0ig6v"]
 
 [ext_resource type="Texture2D" uid="uid://b7ju6af71nhu3" path="res://Assets/Hobbit.png" id="1_rmk7w"]
-[ext_resource type="Script" uid="uid://ck16v51fps5ly" path="res://Scripts/Hobbit.gd" id="1_uvtrw"]
+[ext_resource type="Script" uid="uid://bt1wmjtgpklo1" path="res://Scripts/Hobbit.gd" id="1_uvtrw"]
 
 [node name="Hobbit" type="Node2D" unique_id=1982342699]
 script = ExtResource("1_uvtrw")
