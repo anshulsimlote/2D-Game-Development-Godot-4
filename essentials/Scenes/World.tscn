@@ -25,4 +25,3 @@ position = Vector2(308, 450)
 position = Vector2(853, 454)
 
 [connection signal="hit_wizard" from="Hobbit" to="." method="_on_hobbit_hit_wizard"]
-[connection signal="cast_spell" from="Wizard" to="." method="_on_wizard_cast_spell"]
