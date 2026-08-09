@@ -2,6 +2,8 @@ class_name Wizard
 
 extends Node2D
 
+signal cast_spell
+
 func _init() -> void:
 	print("Wizard In in _init"," Id: ", get_instance_id()," Name: ",name)
 	
@@ -23,3 +25,8 @@ func _exit_tree() -> void:
 
 func _on_reveal_timer_timeout() -> void:
 	show()
+
+
+func _on_spell_timer_timeout() -> void:
+	print("Spell")
+	cast_spell.emit()

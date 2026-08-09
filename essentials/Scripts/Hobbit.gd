@@ -14,7 +14,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate(0.5 *delta)
+	rotate(PI * delta)
 
 func _exit_tree() -> void:
 	print("Hobbit In in _exit_tree"," Id: ", get_instance_id()," Name: ",name)
