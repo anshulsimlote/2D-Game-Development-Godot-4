@@ -30,3 +30,6 @@ func _on_reveal_timer_timeout() -> void:
 func _on_spell_timer_timeout() -> void:
 	print("Spell")
 	cast_spell.emit()
+	
+func hit_by_hobbit() -> void:
+	scale = Vector2(2.0,2.0)
