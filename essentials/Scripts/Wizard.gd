@@ -2,8 +2,6 @@ class_name Wizard
 
 extends Node2D
 
-@onready var reveal_timer: Timer = $RevealTimer
-
 func _init() -> void:
 	print("Wizard In in _init"," Id: ", get_instance_id()," Name: ",name)
 	
@@ -17,8 +15,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (reveal_timer.is_stopped()):
-		show()
+	pass
 
 func _exit_tree() -> void:
 	print("Wizard In in _exit_tree"," Id: ", get_instance_id()," Name: ",name)
+
+
+func _on_reveal_timer_timeout() -> void:
+	show()
