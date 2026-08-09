@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 
 func _on_wizard_cast_spell() -> void:
 	# Automatically finds all hobbits currently in the scene
-	get_tree().call_group("hobbits", "set_scale", Vector2(0.5, 0.5))
+	get_tree().call_group("hobbits","hit_by_spell")
