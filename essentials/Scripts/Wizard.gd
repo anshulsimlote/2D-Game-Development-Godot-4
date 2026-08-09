@@ -2,7 +2,7 @@ class_name Wizard
 
 extends Node2D
 
-var elapsed_time:float = 0.0
+@onready var reveal_timer: Timer = $RevealTimer
 
 func _init() -> void:
 	print("Wizard In in _init"," Id: ", get_instance_id()," Name: ",name)
@@ -17,8 +17,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	elapsed_time += delta
-	if (elapsed_time > 2.0):
+	if (reveal_timer.is_stopped()):
 		show()
 
 func _exit_tree() -> void:
