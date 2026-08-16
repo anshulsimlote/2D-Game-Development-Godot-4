@@ -1,6 +1,9 @@
 extends Area2D
 
 class_name FoxController
+
+signal  eaten_dice
+
 @onready var fox: Sprite2D = $Fox
 @export var fox_speed: float = 200.0
 @onready var eat_sound: AudioStreamPlayer = $EatSound
@@ -25,3 +28,4 @@ func _on_area_entered(area: Area2D) -> void:
 		print("EAT")
 		area.queue_free()
 		eat_sound.play()
+		eaten_dice.emit()

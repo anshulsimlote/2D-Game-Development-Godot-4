@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ba6fdm5l8brft" path="res://Scenes/disc_scene.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://Assets/tetris.mp3" id="5_wowpa"]
+[ext_resource type="FontFile" uid="uid://bpccahjr4tvqq" path="res://Assets/TitanOne-Regular.ttf" id="6_i6g32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l0tm"]
+font = ExtResource("6_i6g32")
+shadow_color = Color(0, 0, 0, 0.7882353)
+shadow_offset = Vector2(2, 2)
 
 [node name="Game" type="Node2D" unique_id=800085031]
 script = ExtResource("1_wrm1d")
@@ -17,7 +23,6 @@ centered = false
 
 [node name="FoxScene" parent="." unique_id=145205863 instance=ExtResource("2_qxrlw")]
 position = Vector2(348, 546)
-fox_speed = null
 
 [node name="FallTimer" type="Timer" parent="." unique_id=1153980729]
 autostart = true
@@ -27,4 +32,13 @@ stream = ExtResource("5_wowpa")
 autoplay = true
 parameters/looping = false
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=1144552859]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 28.0
+text = "0000"
+label_settings = SubResource("LabelSettings_1l0tm")
+
+[connection signal="eaten_dice" from="FoxScene" to="." method="_on_fox_scene_eaten_dice"]
 [connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]
