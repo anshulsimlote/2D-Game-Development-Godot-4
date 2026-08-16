@@ -5,12 +5,20 @@ extends Node2D
 var _score: int = 0
 @onready var score_label: Label = $ScoreLabel
 @onready var sound: AudioStreamPlayer = $Sound
+@onready var pausable: Node = $Pausable
 const GAME_OVER = preload("uid://eii2vgkwahql")
 
+func _ready() -> void:
+	get_tree().paused = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("reload"):
+		get_tree().reload_current_scene()
+		
 func spawn_item():
 	var disc_instance = disc_scene.instantiate()	
 	disc_instance.game_over.connect(_on_game_over)
-	add_child(disc_instance)
+	pausable.add_child(disc_instance)
 
 
 func _on_fall_timer_timeout() -> void:
