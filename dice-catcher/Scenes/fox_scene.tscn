@@ -3,8 +3,15 @@
 [ext_resource type="Script" uid="uid://bxes7crh44ny" path="res://Scripts/FoxController.gd" id="1_llxlq"]
 [ext_resource type="Texture2D" uid="uid://c521h60u1k7mt" path="res://Assets/Fox.png" id="1_s0rtd"]
 
-[node name="FoxScene" type="Node2D" unique_id=145205863]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qmx1"]
+size = Vector2(92.5, 5)
+
+[node name="FoxScene" type="Area2D" unique_id=217154929]
 script = ExtResource("1_llxlq")
 
 [node name="Fox" type="Sprite2D" parent="." unique_id=431095049]
 texture = ExtResource("1_s0rtd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521589211]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_4qmx1")
