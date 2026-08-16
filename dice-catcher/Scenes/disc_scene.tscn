@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ba6fdm5l8brft"]
+
+[ext_resource type="Texture2D" uid="uid://wtrtptm6su1" path="res://Assets/Dice.png" id="1_gx6aw"]
+[ext_resource type="Script" uid="uid://kkeb5wmjhlhr" path="res://Scripts/DiscController.gd" id="1_lymng"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qmx1"]
+radius = 34.132095
+
+[node name="DiscScene" type="Area2D" unique_id=1202298789]
+script = ExtResource("1_lymng")
+
+[node name="Dice" type="Sprite2D" parent="." unique_id=501921463]
+position = Vector2(0.5, 35)
+texture = ExtResource("1_gx6aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1876962189]
+position = Vector2(0.5, 35)
+shape = SubResource("CircleShape2D_4qmx1")
+debug_color = Color(0.9488688, 2.3102762e-06, 0.5786085, 0.41960785)

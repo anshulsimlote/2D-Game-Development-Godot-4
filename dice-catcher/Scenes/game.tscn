@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://xlj61jrmvlld"]
+
+[ext_resource type="Texture2D" uid="uid://hjt2a50it2vy" path="res://Assets/GemBg.png" id="1_ebmjs"]
+[ext_resource type="Script" uid="uid://cq3w580h57sno" path="res://Scripts/GameController.gd" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://ba6fdm5l8brft" path="res://Scenes/disc_scene.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
+[ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://Assets/tetris.mp3" id="5_wowpa"]
+[ext_resource type="LabelSettings" uid="uid://b4labselj8rdt" path="res://Resources/title_lable.tres" id="6_i6g32"]
+[ext_resource type="LabelSettings" uid="uid://d5vanacjs5u7" path="res://Resources/game_over_lable.tres" id="7_1l0tm"]
+
+[node name="Game" type="Node2D" unique_id=800085031]
+process_mode = 3
+script = ExtResource("1_wrm1d")
+disc_scene = ExtResource("2_3dryh")
+
+[node name="GemBg" type="Sprite2D" parent="." unique_id=965938067]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_ebmjs")
+centered = false
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=190457558]
+stream = ExtResource("5_wowpa")
+autoplay = true
+parameters/looping = false
+
+[node name="Pausable" type="Node" parent="." unique_id=312195550]
+process_mode = 1
+
+[node name="FallTimer" type="Timer" parent="Pausable" unique_id=1153980729]
+autostart = true
+
+[node name="FoxScene" parent="Pausable" unique_id=145205863 instance=ExtResource("2_qxrlw")]
+position = Vector2(348, 546)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1144552859]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 50.0
+offset_bottom = 28.0
+text = "0000"
+label_settings = ExtResource("6_i6g32")
+
+[node name="GameOverLable" type="Label" parent="." unique_id=1204859811]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 361.0
+offset_top = 291.0
+offset_right = 863.0
+offset_bottom = 389.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = ExtResource("7_1l0tm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Pausable/FallTimer" to="." method="_on_fall_timer_timeout"]
+[connection signal="eaten_dice" from="Pausable/FoxScene" to="." method="_on_fox_scene_eaten_dice"]
