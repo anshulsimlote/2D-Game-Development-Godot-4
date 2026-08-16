@@ -2,6 +2,7 @@ extends Area2D
 
 class_name DiscController
 
+const BUFFER:float = 60.0
 @export var SPEED:float = 100.0
 @export var ROTATION_SPEED:float = 2 * PI
 @onready var dice: Sprite2D = $Dice
@@ -10,6 +11,8 @@ var rotation_speed = ROTATION_SPEED
 func _ready() -> void:
 	if randf() < 0.5:
 		rotation_speed *= -1
+	position.x = randf_range(get_viewport_rect().position.x+BUFFER,
+	get_viewport_rect().end.x-BUFFER)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

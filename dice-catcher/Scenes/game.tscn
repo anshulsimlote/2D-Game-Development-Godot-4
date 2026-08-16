@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://hjt2a50it2vy" path="res://Assets/GemBg.png" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cq3w580h57sno" path="res://Scripts/GameController.gd" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://ba6fdm5l8brft" path="res://Scenes/disc_scene.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=800085031]
 script = ExtResource("1_wrm1d")
+disc_scene = ExtResource("2_3dryh")
 
 [node name="GemBg" type="Sprite2D" parent="." unique_id=965938067]
 scale = Vector2(0.7, 0.7)
