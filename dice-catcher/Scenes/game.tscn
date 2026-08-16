@@ -14,3 +14,9 @@ centered = false
 
 [node name="FoxScene" parent="." unique_id=145205863 instance=ExtResource("2_qxrlw")]
 position = Vector2(348, 546)
+fox_speed = null
+
+[node name="FallTimer" type="Timer" parent="." unique_id=1153980729]
+autostart = true
+
+[connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]

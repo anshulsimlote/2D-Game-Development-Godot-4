@@ -8,9 +8,9 @@ const FIXED_Y: float = 100.0
 func _ready() -> void:
 	pass 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		spawn_item()
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("ui_accept"):
+		#spawn_item()
 
 func spawn_item():
 	# Check if scene loaded correctly
@@ -29,3 +29,7 @@ func spawn_item():
 	disc_instance.global_position = Vector2(random_x, FIXED_Y)
 	
 	add_child(disc_instance)
+
+
+func _on_fall_timer_timeout() -> void:
+	spawn_item()
