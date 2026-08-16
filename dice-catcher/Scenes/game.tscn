@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cq3w580h57sno" path="res://Scripts/GameController.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://ba6fdm5l8brft" path="res://Scenes/disc_scene.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
+[ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://Assets/tetris.mp3" id="5_wowpa"]
 
 [node name="Game" type="Node2D" unique_id=800085031]
 script = ExtResource("1_wrm1d")
@@ -20,5 +21,10 @@ fox_speed = null
 
 [node name="FallTimer" type="Timer" parent="." unique_id=1153980729]
 autostart = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=190457558]
+stream = ExtResource("5_wowpa")
+autoplay = true
+parameters/looping = false
 
 [connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]
