@@ -22,9 +22,6 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_ebmjs")
 centered = false
 
-[node name="FallTimer" type="Timer" parent="." unique_id=1153980729]
-autostart = true
-
 [node name="Sound" type="AudioStreamPlayer" parent="." unique_id=190457558]
 stream = ExtResource("5_wowpa")
 autoplay = true
@@ -32,6 +29,9 @@ parameters/looping = false
 
 [node name="Pausable" type="Node" parent="." unique_id=312195550]
 process_mode = 1
+
+[node name="FallTimer" type="Timer" parent="Pausable" unique_id=1153980729]
+autostart = true
 
 [node name="FoxScene" parent="Pausable" unique_id=145205863 instance=ExtResource("2_qxrlw")]
 position = Vector2(348, 546)
@@ -44,5 +44,5 @@ offset_bottom = 28.0
 text = "0000"
 label_settings = SubResource("LabelSettings_1l0tm")
 
-[connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]
+[connection signal="timeout" from="Pausable/FallTimer" to="." method="_on_fall_timer_timeout"]
 [connection signal="eaten_dice" from="Pausable/FoxScene" to="." method="_on_fox_scene_eaten_dice"]
