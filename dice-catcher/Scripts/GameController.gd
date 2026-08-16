@@ -6,6 +6,7 @@ var _score: int = 0
 @onready var score_label: Label = $ScoreLabel
 @onready var sound: AudioStreamPlayer = $Sound
 @onready var pausable: Node = $Pausable
+@onready var game_over_lable: Label = $GameOverLable
 const GAME_OVER = preload("uid://eii2vgkwahql")
 
 func _ready() -> void:
@@ -28,6 +29,7 @@ func _on_game_over() -> void:
 	sound.stop()
 	sound.stream = GAME_OVER
 	sound.play()
+	game_over_lable.show()
 
 
 func _on_fox_scene_eaten_dice() -> void:

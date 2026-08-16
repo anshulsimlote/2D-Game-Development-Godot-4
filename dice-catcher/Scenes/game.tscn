@@ -5,12 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ba6fdm5l8brft" path="res://Scenes/disc_scene.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://Assets/tetris.mp3" id="5_wowpa"]
-[ext_resource type="FontFile" uid="uid://bpccahjr4tvqq" path="res://Assets/TitanOne-Regular.ttf" id="6_i6g32"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_1l0tm"]
-font = ExtResource("6_i6g32")
-shadow_color = Color(0, 0, 0, 0.7882353)
-shadow_offset = Vector2(2, 2)
+[ext_resource type="LabelSettings" uid="uid://b4labselj8rdt" path="res://Resources/title_lable.tres" id="6_i6g32"]
+[ext_resource type="LabelSettings" uid="uid://d5vanacjs5u7" path="res://Resources/game_over_lable.tres" id="7_1l0tm"]
 
 [node name="Game" type="Node2D" unique_id=800085031]
 process_mode = 3
@@ -42,7 +38,25 @@ offset_top = 5.0
 offset_right = 50.0
 offset_bottom = 28.0
 text = "0000"
-label_settings = SubResource("LabelSettings_1l0tm")
+label_settings = ExtResource("6_i6g32")
+
+[node name="GameOverLable" type="Label" parent="." unique_id=1204859811]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 361.0
+offset_top = 291.0
+offset_right = 863.0
+offset_bottom = 389.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = ExtResource("7_1l0tm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Pausable/FallTimer" to="." method="_on_fall_timer_timeout"]
 [connection signal="eaten_dice" from="Pausable/FoxScene" to="." method="_on_fox_scene_eaten_dice"]
