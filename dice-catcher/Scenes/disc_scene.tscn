@@ -4,15 +4,16 @@
 [ext_resource type="Script" uid="uid://kkeb5wmjhlhr" path="res://Scenes/DiscController.gd" id="1_lymng"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qmx1"]
-radius = 33.01515
+radius = 34.132095
 
-[node name="DiscScene" type="Node2D" unique_id=843040431]
+[node name="DiscScene" type="Area2D" unique_id=1202298789]
 script = ExtResource("1_lymng")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=521943868]
-
-[node name="Dice" type="Sprite2D" parent="RigidBody2D" unique_id=501921463]
+[node name="Dice" type="Sprite2D" parent="." unique_id=501921463]
+position = Vector2(0.5, 35)
 texture = ExtResource("1_gx6aw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1876962189]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1876962189]
+position = Vector2(0.5, 35)
 shape = SubResource("CircleShape2D_4qmx1")
+debug_color = Color(0.9488688, 2.3102762e-06, 0.5786085, 0.41960785)
