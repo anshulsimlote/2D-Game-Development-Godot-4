@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bb1f3ebaa7yx8"]
+
+[ext_resource type="Script" uid="uid://blibktx1f21" path="res://Scripts/reloader.gd" id="1_ljasc"]
+
+[node name="Reloader" type="Node2D" unique_id=1303003085]
+process_mode = 3
+script = ExtResource("1_ljasc")

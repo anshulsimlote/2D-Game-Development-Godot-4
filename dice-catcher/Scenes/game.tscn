@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7ko8y4tkil16" path="res://Scenes/fox_scene.tscn" id="2_qxrlw"]
 [ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://Assets/tetris.mp3" id="5_wowpa"]
 [ext_resource type="FontFile" uid="uid://bpccahjr4tvqq" path="res://Assets/TitanOne-Regular.ttf" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://bb1f3ebaa7yx8" path="res://Scenes/reloader.tscn" id="7_1l0tm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1l0tm"]
 font = ExtResource("6_i6g32")
@@ -39,6 +40,8 @@ offset_right = 50.0
 offset_bottom = 28.0
 text = "0000"
 label_settings = SubResource("LabelSettings_1l0tm")
+
+[node name="Reloader" parent="." unique_id=1303003085 instance=ExtResource("7_1l0tm")]
 
 [connection signal="eaten_dice" from="FoxScene" to="." method="_on_fox_scene_eaten_dice"]
 [connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]

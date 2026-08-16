@@ -2,6 +2,8 @@ extends Area2D
 
 class_name DiscController
 
+signal game_over 
+
 const BUFFER:float = 60.0
 @export var SPEED:float = 100.0
 @export var ROTATION_SPEED:float = 2 * PI
@@ -25,3 +27,4 @@ func _physics_process(delta: float) -> void:
 func check_offscreen() -> void:
 	if get_viewport_rect().end.y < position.y:
 		get_tree().paused = true
+		game_over.emit()
