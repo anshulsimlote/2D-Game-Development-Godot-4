@@ -16,3 +16,5 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2102996476]
 position = Vector2(27, 33)
 shape = SubResource("CircleShape2D_4qmx1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1306834007]

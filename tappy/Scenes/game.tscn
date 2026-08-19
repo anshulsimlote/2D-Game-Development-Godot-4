@@ -7,10 +7,12 @@
 [node name="Game" type="Node2D" unique_id=2061171689]
 
 [node name="Gradient" type="Sprite2D" parent="." unique_id=1016104502]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ebmjs")
 centered = false
 
 [node name="MainScreen" type="Sprite2D" parent="." unique_id=1231641976]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_qxrlw")
 centered = false
 
