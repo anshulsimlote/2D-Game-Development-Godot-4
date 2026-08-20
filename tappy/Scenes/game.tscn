@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ds8jedewkd4q1" path="res://Assets/background/Gradient (z -6).png" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://Assets/background/MainScreen.png" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cbmrsyihnjaue" path="res://Scenes/game_background.tscn" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://5cps8eoqs14y" path="res://Scenes/bird.tscn" id="3_wrm1d"]
 
 [node name="Game" type="Node2D" unique_id=2061171689]
@@ -11,9 +12,11 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ebmjs")
 centered = false
 
-[node name="MainScreen" type="Sprite2D" parent="." unique_id=1231641976]
+[node name="MainScreen" type="Sprite2D" parent="." unique_id=1530566046]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_qxrlw")
 centered = false
+
+[node name="Game_Background" parent="." unique_id=1639711625 instance=ExtResource("3_3dryh")]
 
 [node name="Bird" parent="." unique_id=387734093 instance=ExtResource("3_wrm1d")]

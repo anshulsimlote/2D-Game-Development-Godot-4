@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cbmrsyihnjaue"]
+
+[ext_resource type="Texture2D" uid="uid://ds8jedewkd4q1" path="res://Assets/background/Gradient (z -6).png" id="1_381h4"]
+[ext_resource type="Script" uid="uid://dhbqou0rmeij5" path="res://Scripts/game_background.gd" id="1_y0i3p"]
+
+[node name="Game_Background" type="Node2D" unique_id=1639711625]
+script = ExtResource("1_y0i3p")
+
+[node name="Gradient(z6)" type="Sprite2D" parent="." unique_id=684708178]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_381h4")
+centered = false
