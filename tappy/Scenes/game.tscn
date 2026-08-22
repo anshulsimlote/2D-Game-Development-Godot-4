@@ -1,26 +1,10 @@
 [gd_scene format=3 uid="uid://cmvi8rt67bmrw"]
 
-[ext_resource type="Script" uid="uid://binfeqfe60f01" path="res://Scripts/game.gd" id="1_3dryh"]
-[ext_resource type="Texture2D" uid="uid://ds8jedewkd4q1" path="res://Assets/background/Gradient (z -6).png" id="1_ebmjs"]
-[ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://Assets/background/MainScreen.png" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://cbmrsyihnjaue" path="res://Scenes/game_background.tscn" id="3_3dryh"]
-[ext_resource type="PackedScene" uid="uid://5cps8eoqs14y" path="res://Scenes/bird.tscn" id="3_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://Assets/background/Parallax0.png" id="1_ebmjs"]
 
-[node name="Game" type="Node2D" unique_id=2061171689]
-script = ExtResource("1_3dryh")
+[node name="Game" type="Node2D" unique_id=853793634]
 
-[node name="Gradient" type="Sprite2D" parent="." unique_id=1016104502]
-scale = Vector2(1.5, 1.5)
+[node name="Parallax0" type="Sprite2D" parent="." unique_id=1379294209]
+position = Vector2(-139, 619)
 texture = ExtResource("1_ebmjs")
-
-[node name="Game_Background" parent="." unique_id=1639711625 instance=ExtResource("3_3dryh")]
-position = Vector2(-354, -643)
-
-[node name="MainScreen" type="Sprite2D" parent="." unique_id=1530566046]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_qxrlw")
-
-[node name="Bird" parent="." unique_id=387734093 instance=ExtResource("3_wrm1d")]
-position = Vector2(-354, -643)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1122466089]
+centered = false
