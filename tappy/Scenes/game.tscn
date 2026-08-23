@@ -43,4 +43,6 @@ position = Vector2(600, 425)
 wait_time = 1.2
 autostart = true
 
+[node name="Pipe_Holder" type="Node2D" parent="." unique_id=1997131830]
+
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
