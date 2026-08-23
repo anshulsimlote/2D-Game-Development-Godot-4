@@ -1,0 +1,24 @@
+extends Node2D
+class_name Game
+
+@onready var upper_spwan: Marker2D = $Boundary/Upper_Spwan
+@onready var lower_spawn: Marker2D = $Boundary/Lower_Spawn
+@export var pipes_scenes: PackedScene
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	spawn_pipes()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func spawn_pipes() -> void:
+	var pipe_instance = pipes_scenes.instantiate()	
+	pipe_instance.position.x = upper_spwan.position.x
+	pipe_instance.position.y = randf_range(upper_spwan.position.y, lower_spawn.position.y)
+	add_child(pipe_instance)
+
+
+func _on_spawn_timer_timeout() -> void:
+	spawn_pipes()

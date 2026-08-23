@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dh2reb4yrxdfe" path="res://Scenes/laser.tscn" id="1_7ktcp"]
 [ext_resource type="PackedScene" uid="uid://cprisvrqbww30" path="res://Scenes/pipe.tscn" id="1_uhra5"]
+[ext_resource type="Script" uid="uid://c72a7svboatar" path="res://pipes.gd" id="1_ws3sl"]
 
 [node name="Pipes" type="Node2D" unique_id=1038511061]
+script = ExtResource("1_ws3sl")
 
 [node name="Laser" parent="." unique_id=1633449342 instance=ExtResource("1_7ktcp")]
 
@@ -13,3 +15,12 @@ rotation = 3.1415927
 
 [node name="Pipe_lower" parent="." unique_id=943904740 instance=ExtResource("1_uhra5")]
 position = Vector2(0, 70)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=484711260]
+position = Vector2(64, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=203270589]
+wait_time = 15.0
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
