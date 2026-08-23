@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://Assets/background/Parallax0.png" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://conn4bs0pciuy" path="res://Scenes/tappy.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dv23s2203vqio" path="res://Scenes/pipes.tscn" id="3_wrm1d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 
@@ -10,6 +11,7 @@
 [node name="Game" type="Node2D" unique_id=853793634]
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=1379294209]
+z_index = 10
 position = Vector2(-139, 619)
 texture = ExtResource("1_ebmjs")
 centered = false
@@ -27,3 +29,6 @@ shape = SubResource("WorldBoundaryShape2D_qxrlw")
 [node name="Bottom_Boundary" type="CollisionShape2D" parent="Boundary" unique_id=1474561796]
 position = Vector2(243, 849)
 shape = SubResource("WorldBoundaryShape2D_wrm1d")
+
+[node name="Pipes" parent="." unique_id=1038511061 instance=ExtResource("3_wrm1d")]
+position = Vector2(387, 363)
