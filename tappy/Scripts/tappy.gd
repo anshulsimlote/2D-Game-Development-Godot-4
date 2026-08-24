@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Tappy
 
-
 const SPEED = 50.0
 const JUMP_VELOCITY = -350.0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -17,3 +16,9 @@ func _physics_process(delta: float) -> void:
 	velocity.x = SPEED
 
 	move_and_slide()
+	
+	if is_on_floor() || is_on_ceiling() : die()
+
+func die() -> void:
+	print("DEAD!!!")
+	get_tree().paused = true

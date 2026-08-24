@@ -22,10 +22,9 @@ func _on_timer_timeout() -> void:
 
 
 func _on_pipe_upper_lower_body_entered(body: Node2D) -> void:
-	print("body.name -> ",body.name)
-	#if body.name == "Tappy":
-		#print("PIPE HIT!!")
+	if body is Tappy:
+		body.die()
 
 
 func _on_laser_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass
