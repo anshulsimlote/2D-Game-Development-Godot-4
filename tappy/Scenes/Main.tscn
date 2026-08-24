@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://ojsvie51nj4j"]
+
+[ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://Assets/background/MainScreen.png" id="1_r150o"]
+[ext_resource type="LabelSettings" uid="uid://c32bc8budrggc" path="res://Resources/title_label_settings.tres" id="2_idj7w"]
+[ext_resource type="LabelSettings" uid="uid://uusnakg12yls" path="res://Resources/score_label_settings.tres" id="3_kln2b"]
+[ext_resource type="FontFile" uid="uid://d1gr0bqwryexr" path="res://Assets/fonts/TitanOne-Regular.ttf" id="3_rgh2o"]
+[ext_resource type="AudioStream" uid="uid://da3uu2gx5a53l" path="res://Assets/audio/bgm_menu.mp3" id="5_pbw6q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pbw6q"]
+font = ExtResource("3_rgh2o")
+font_size = 75
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_pbw6q"]
+resource_name = "Flash Text"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/ScreenText:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.20000002, 0.3, 0.40000004, 0.5, 0.6, 0.70000005, 0.8000001, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.4627451), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4627451), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4627451), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v1gob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MarginContainer/ScreenText:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jw32o"]
+_data = {
+&"Flash Text": SubResource("Animation_pbw6q"),
+&"RESET": SubResource("Animation_v1gob")
+}
+
+[node name="Main" type="Control" unique_id=997739792]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=701974434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r150o")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1650263489]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=893619284]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "TAPPY"
+label_settings = ExtResource("2_idj7w")
+
+[node name="ScreenText" type="Label" parent="MarginContainer" unique_id=1833599241]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS JUMP"
+label_settings = SubResource("LabelSettings_pbw6q")
+
+[node name="HighScore" type="Label" parent="MarginContainer" unique_id=1665042221]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "High Score"
+label_settings = ExtResource("3_kln2b")
+
+[node name="Score" type="Label" parent="MarginContainer" unique_id=744031143]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0000"
+label_settings = ExtResource("3_kln2b")
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="." unique_id=1848171527]
+stream = ExtResource("5_pbw6q")
+volume_db = -12.0
+autoplay = true
+
+[node name="MainScreenAnimation" type="AnimationPlayer" parent="." unique_id=626037144]
+root_node = NodePath("../Background_Music")
+libraries/ = SubResource("AnimationLibrary_jw32o")
+autoplay = &"Flash Text"
