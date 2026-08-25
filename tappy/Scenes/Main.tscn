@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ojsvie51nj4j"]
 
 [ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://Assets/background/MainScreen.png" id="1_r150o"]
+[ext_resource type="Script" uid="uid://bv1rbktgo4ann" path="res://main.gd" id="1_v1gob"]
 [ext_resource type="LabelSettings" uid="uid://c32bc8budrggc" path="res://Resources/title_label_settings.tres" id="2_idj7w"]
 [ext_resource type="LabelSettings" uid="uid://uusnakg12yls" path="res://Resources/score_label_settings.tres" id="3_kln2b"]
 [ext_resource type="FontFile" uid="uid://d1gr0bqwryexr" path="res://Assets/fonts/TitanOne-Regular.ttf" id="3_rgh2o"]
@@ -57,6 +58,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v1gob")
 
 [node name="Background" type="TextureRect" parent="." unique_id=701974434]
 layout_mode = 1
