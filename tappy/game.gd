@@ -5,7 +5,6 @@ class_name Game
 @onready var upper_spwan: Marker2D = $Boundary/Upper_Spwan
 @onready var lower_spawn: Marker2D = $Boundary/Lower_Spawn
 @export var pipes_scenes: PackedScene
-var main_scene = load("uid://ojsvie51nj4j")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +13,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Close"):
-		get_tree().change_scene_to_packed(main_scene)
+		GameManager.load_scene("Main")
 
 func spawn_pipes() -> void:
 	var pipe_instance = pipes_scenes.instantiate()	
