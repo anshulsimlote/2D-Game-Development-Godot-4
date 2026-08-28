@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dh2reb4yrxdfe" path="res://Scenes/laser.tscn" id="1_7ktcp"]
 [ext_resource type="PackedScene" uid="uid://cprisvrqbww30" path="res://Scenes/pipe.tscn" id="1_uhra5"]
-[ext_resource type="Script" uid="uid://c72a7svboatar" path="res://pipes.gd" id="1_ws3sl"]
+[ext_resource type="Script" uid="uid://c72a7svboatar" path="res://Scripts/pipes.gd" id="1_ws3sl"]
 
 [node name="Pipes" type="Node2D" unique_id=1038511061]
 script = ExtResource("1_ws3sl")

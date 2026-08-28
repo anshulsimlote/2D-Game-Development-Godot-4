@@ -1,17 +1,11 @@
 [gd_scene format=3 uid="uid://ojsvie51nj4j"]
 
 [ext_resource type="Texture2D" uid="uid://hr7ncocwdu5i" path="res://Assets/background/MainScreen.png" id="1_r150o"]
-[ext_resource type="Script" uid="uid://bv1rbktgo4ann" path="res://main.gd" id="1_v1gob"]
+[ext_resource type="Script" uid="uid://bv1rbktgo4ann" path="res://Scripts/main.gd" id="1_v1gob"]
 [ext_resource type="LabelSettings" uid="uid://c32bc8budrggc" path="res://Resources/title_label_settings.tres" id="2_idj7w"]
 [ext_resource type="LabelSettings" uid="uid://uusnakg12yls" path="res://Resources/score_label_settings.tres" id="3_kln2b"]
-[ext_resource type="FontFile" uid="uid://d1gr0bqwryexr" path="res://Assets/fonts/TitanOne-Regular.ttf" id="3_rgh2o"]
+[ext_resource type="LabelSettings" uid="uid://bpnghuw0xu7d0" path="res://Resources/press_jump_label_settings.tres" id="4_v1gob"]
 [ext_resource type="AudioStream" uid="uid://da3uu2gx5a53l" path="res://Assets/audio/bgm_menu.mp3" id="5_pbw6q"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pbw6q"]
-font = ExtResource("3_rgh2o")
-font_size = 75
-outline_color = Color(0, 0, 0, 1)
-shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_pbw6q"]
 resource_name = "Flash Text"
@@ -92,7 +86,7 @@ label_settings = ExtResource("2_idj7w")
 layout_mode = 2
 size_flags_horizontal = 4
 text = "PRESS JUMP"
-label_settings = SubResource("LabelSettings_pbw6q")
+label_settings = ExtResource("4_v1gob")
 
 [node name="HighScore" type="Label" parent="MarginContainer" unique_id=1665042221]
 layout_mode = 2

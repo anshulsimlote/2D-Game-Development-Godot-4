@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://cmvi8rt67bmrw"]
 
 [ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://Assets/background/Parallax0.png" id="1_ebmjs"]
-[ext_resource type="Script" uid="uid://r5qnbkqly20d" path="res://game.gd" id="1_wrm1d"]
+[ext_resource type="Script" uid="uid://r5qnbkqly20d" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://conn4bs0pciuy" path="res://Scenes/tappy.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://ojsvie51nj4j" path="res://Scenes/Main.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dv23s2203vqio" path="res://Scenes/pipes.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://cvu54sel7yi7s" path="res://Scenes/game_ui.tscn" id="5_wowpa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wrm1d"]
 
-[node name="Game" type="Node2D" unique_id=853793634]
+[node name="Game" type="Node" unique_id=751262656]
 script = ExtResource("1_wrm1d")
 pipes_scenes = ExtResource("3_wrm1d")
-main_scene = ExtResource("3_wowpa")
 
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=1379294209]
 z_index = 10
@@ -48,5 +47,9 @@ wait_time = 1.2
 autostart = true
 
 [node name="Pipe_Holder" type="Node2D" parent="." unique_id=1997131830]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=86243388]
+
+[node name="GameUI" parent="CanvasLayer" unique_id=572046521 instance=ExtResource("5_wowpa")]
 
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]

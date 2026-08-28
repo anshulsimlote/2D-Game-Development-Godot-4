@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 class_name Game
 
 @onready var pipe_holder: Node2D = $Pipe_Holder
