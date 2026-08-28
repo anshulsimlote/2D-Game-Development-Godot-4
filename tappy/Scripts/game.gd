@@ -1,6 +1,7 @@
 extends Node
 class_name Game
 
+@onready var game_ui: GameUI = $CanvasLayer/GameUI
 @onready var pipe_holder: Node2D = $Pipe_Holder
 @onready var upper_spwan: Marker2D = $Boundary/Upper_Spwan
 @onready var lower_spawn: Marker2D = $Boundary/Lower_Spawn
@@ -25,3 +26,7 @@ func spawn_pipes() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_pipes()
+
+
+func _on_tappy_tappy_die() -> void:
+	game_ui.game_over()
