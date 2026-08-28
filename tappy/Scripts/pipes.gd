@@ -2,6 +2,7 @@ extends Node2D
 class_name Pipes
 
 var speed:float = 120.0
+@onready var score: AudioStreamPlayer = $Score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,4 +28,4 @@ func _on_pipe_upper_lower_body_entered(body: Node2D) -> void:
 
 
 func _on_laser_body_entered(body: Node2D) -> void:
-	pass
+	score.play()

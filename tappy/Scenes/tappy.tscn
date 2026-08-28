@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxwkqi3g66l3g" path="res://Scripts/tappy.gd" id="1_4cnbk"]
 [ext_resource type="Texture2D" uid="uid://c4m6wi51q6kn0" path="res://Assets/items/frog.png" id="2_d04dn"]
+[ext_resource type="AudioStream" uid="uid://dr4o5p8h56wd" path="res://Assets/audio/engine.mp3" id="3_ekwu4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekwu4"]
 atlas = ExtResource("2_d04dn")
@@ -376,6 +377,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TappySound:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_d04dn"]
 resource_name = "fly"
@@ -405,6 +418,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, -0.17453292519943295, 0.17453292519943295, 0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TappySound:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.2, 1.3, 1.4000000000000001, 1.5, 1.5999999999999999, 1.6]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ekwu4"]
 _data = {
@@ -429,3 +454,8 @@ shape = SubResource("CircleShape2D_7dhun")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1404910702]
 libraries/ = SubResource("AnimationLibrary_ekwu4")
+
+[node name="TappySound" type="AudioStreamPlayer" parent="." unique_id=192498431]
+stream = ExtResource("3_ekwu4")
+autoplay = true
+parameters/looping = true
