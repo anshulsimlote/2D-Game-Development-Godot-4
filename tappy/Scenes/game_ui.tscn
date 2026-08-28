@@ -5,6 +5,7 @@
 [ext_resource type="LabelSettings" uid="uid://bpnghuw0xu7d0" path="res://Resources/press_jump_label_settings.tres" id="2_xjnnq"]
 
 [node name="GameUI" type="Control" unique_id=572046521]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

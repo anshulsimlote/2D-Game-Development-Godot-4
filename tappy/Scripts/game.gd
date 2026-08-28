@@ -12,10 +12,6 @@ func _ready() -> void:
 	spawn_pipes()
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Close"):
-		GameManager.load_scene("Main")
-
 func spawn_pipes() -> void:
 	var pipe_instance = pipes_scenes.instantiate()	
 	pipe_instance.position.x = upper_spwan.position.x
@@ -26,7 +22,3 @@ func spawn_pipes() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_pipes()
-
-
-func _on_tappy_tappy_die() -> void:
-	game_ui.game_over()
