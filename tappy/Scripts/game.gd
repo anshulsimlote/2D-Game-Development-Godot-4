@@ -16,7 +16,6 @@ func spawn_pipes() -> void:
 	var pipe_instance = pipes_scenes.instantiate()	
 	pipe_instance.position.x = upper_spwan.position.x
 	pipe_instance.position.y = randf_range(upper_spwan.position.y, lower_spawn.position.y)
-	#pipe_instance.connect("tappy_die",Tappy._die())
 	pipe_holder.add_child(pipe_instance)
 
 

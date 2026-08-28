@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://conn4bs0pciuy" path="res://Scenes/tappy.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://dv23s2203vqio" path="res://Scenes/pipes.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://cvu54sel7yi7s" path="res://Scenes/game_ui.tscn" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://c62xatyyd3us0" path="res://Scenes/scrolling_bg.tscn" id="6_i6g32"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxrlw"]
 
@@ -14,7 +15,10 @@
 script = ExtResource("1_wrm1d")
 pipes_scenes = ExtResource("3_wrm1d")
 
+[node name="ScrollingBg" parent="." unique_id=1329694739 instance=ExtResource("6_i6g32")]
+
 [node name="Parallax0" type="Sprite2D" parent="." unique_id=1379294209]
+visible = false
 z_index = 10
 position = Vector2(-139, 619)
 texture = ExtResource("1_ebmjs")
@@ -52,5 +56,4 @@ autostart = true
 
 [node name="GameUI" parent="CanvasLayer" unique_id=572046521 instance=ExtResource("5_wowpa")]
 
-[connection signal="tappy_die" from="Tappy" to="." method="_on_tappy_tappy_die" flags=6]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
