@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://xws5itwbjfhm"]
+
+[ext_resource type="Script" uid="uid://cx41h32wu7sgb" path="res://Scripts/cross_fade_scene.gd" id="1_4vckm"]
+[ext_resource type="PackedScene" uid="uid://cmvi8rt67bmrw" path="res://Scenes/game.tscn" id="2_u33nd"]
+[ext_resource type="PackedScene" uid="uid://ojsvie51nj4j" path="res://Scenes/Main.tscn" id="3_40htk"]
+
+[sub_resource type="Animation" id="Animation_4vckm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.03137255)]
+}
+
+[sub_resource type="Animation" id="Animation_7htvc"]
+resource_name = "fade"
+length = 0.39999999999999997
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.03137255), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0.03137255)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_to_next"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4vckm"]
+_data = {
+&"RESET": SubResource("Animation_4vckm"),
+&"fade": SubResource("Animation_7htvc")
+}
+
+[node name="CrossFadeScene" type="CanvasLayer" unique_id=585103580]
+process_mode = 3
+layer = 10
+script = ExtResource("1_4vckm")
+game = ExtResource("2_u33nd")
+main = ExtResource("3_40htk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=468443168]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.03137255)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=523351248]
+libraries/ = SubResource("AnimationLibrary_4vckm")

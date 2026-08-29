@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cvu54sel7yi7s"]
+
+[ext_resource type="LabelSettings" uid="uid://uusnakg12yls" path="res://Resources/score_label_settings.tres" id="1_bw2rt"]
+[ext_resource type="Script" uid="uid://b8bv1uarjftvq" path="res://Scripts/game_ui.gd" id="1_xjnnq"]
+[ext_resource type="LabelSettings" uid="uid://bpnghuw0xu7d0" path="res://Resources/press_jump_label_settings.tres" id="2_xjnnq"]
+[ext_resource type="AudioStream" uid="uid://wjnyhwhbyrd" path="res://Assets/audio/game_over.wav" id="4_x63ue"]
+
+[node name="GameUI" type="Control" unique_id=572046521]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xjnnq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=20469930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=1607015001]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = ExtResource("1_bw2rt")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer" unique_id=2055567919]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = ExtResource("2_xjnnq")
+
+[node name="PressJump" type="Label" parent="MarginContainer" unique_id=1923054506]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS JUMP"
+label_settings = ExtResource("2_xjnnq")
+
+[node name="PressJumpTimer" type="Timer" parent="." unique_id=1527430346]
+wait_time = 2.0
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1769831245]
+stream = ExtResource("4_x63ue")
+
+[connection signal="timeout" from="PressJumpTimer" to="." method="_on_timer_timeout" flags=6]

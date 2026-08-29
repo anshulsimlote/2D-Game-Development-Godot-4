@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dh2reb4yrxdfe"]
+
+[ext_resource type="Texture2D" uid="uid://m78wsxp1xen5" path="res://Assets/items/laser2.png" id="1_r1bh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1bh0"]
+size = Vector2(5, 169)
+
+[sub_resource type="Animation" id="Animation_mou6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r1bh0"]
+resource_name = "laser"
+length = 0.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1), Color(1, 1, 1, 0.3882353), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mou6w"]
+_data = {
+&"RESET": SubResource("Animation_mou6w"),
+&"laser": SubResource("Animation_r1bh0")
+}
+
+[node name="Laser" type="Area2D" unique_id=1633449342]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Laser2" type="Sprite2D" parent="." unique_id=1258885506]
+scale = Vector2(0.7, 8)
+texture = ExtResource("1_r1bh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1436836897]
+position = Vector2(17, 0)
+shape = SubResource("RectangleShape2D_r1bh0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=335099493]
+libraries/ = SubResource("AnimationLibrary_mou6w")
+autoplay = &"laser"

@@ -1,0 +1,32 @@
+extends Node2D
+class_name Pipes
+
+var speed:float = 120.0
+@onready var score: AudioStreamPlayer = $Score
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	move_local_x(speed * delta * -1 )
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+
+
+func _on_pipe_upper_lower_body_entered(body: Node2D) -> void:
+	if body is Tappy:
+		body.die()
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	score.play()
+	ScoreManager.add_points()
