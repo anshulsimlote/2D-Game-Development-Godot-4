@@ -8,10 +8,10 @@ class_name GameUI
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Close"):
-		GameManager.load_scene("Main")
+		CrossFadeScene.load_scene("Main")
 	elif event.is_action_pressed("ui_accept") and press_jump.visible:
 		get_tree().paused = false
-		GameManager.load_scene("Game")
+		CrossFadeScene.load_scene("Game")
 		
 func _ready() -> void:
 	ScoreManager.reset_score()
