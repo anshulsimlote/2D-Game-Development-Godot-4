@@ -21,4 +21,5 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	SignalHub.tappy_died()
+	ScoreManager.reset_score()
 	get_tree().paused = true

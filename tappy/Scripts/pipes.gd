@@ -29,3 +29,4 @@ func _on_pipe_upper_lower_body_entered(body: Node2D) -> void:
 
 func _on_laser_body_entered(body: Node2D) -> void:
 	score.play()
+	ScoreManager.add_points()
