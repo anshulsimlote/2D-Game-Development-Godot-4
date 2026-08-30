@@ -10,7 +10,13 @@ This repository covers the basics of 2D game development, including:
 - Input handling
 - Godot scripting with GDScript
 
+## Projects
+
+- Dice Catcher
+- Tappy
+
 The project is developed step by step while learning Godot 4 and game development fundamentals.
 
 **Engine:** Godot 4
+
 **Language:** GDScript
